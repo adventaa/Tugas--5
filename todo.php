@@ -8,6 +8,15 @@ include "db_conn.php";
     body{
       background-color: cadetblue;
     }
+    input[type=checkbox]:checked + label {
+  color:red;
+  text-decoration: line-through;
+}
+    .cbox4 {
+  font-size: 5em;
+  color:red;
+  text-decoration: line-through;
+}
     </style>
 <head>
 	  <title>TODO LIST</title>
@@ -44,7 +53,7 @@ include "db_conn.php";
             $i = 1; while ($row = mysqli_fetch_array($list)) { ?>
               <tr>
                 <td> <?php echo $i; ?> </td>
-                <td class="task"> <?php echo $row['isi']; ?> </td>
+                <td class="task"> <input type="checkbox" class="cbox4" value="fourth_checkbox"> <label for="cbox4"> <?php echo $row['isi']; ?> </label></td>
                 <td class="delete"> 
                   <a href="todo.php?del_isi=<?php echo $row['nomor'] ?>"><i class="fa-solid fa-trash-can"></i></a> 
                 </td>

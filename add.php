@@ -5,6 +5,7 @@
 	// connect to database
 	$db = mysqli_connect("localhost", "root", "", "test");
 
+	// delete task
 	if (isset($_GET['del_isi'])) {
 		$id = $_GET['del_isi'];
 	
